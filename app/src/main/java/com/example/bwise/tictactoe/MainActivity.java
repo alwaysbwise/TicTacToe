@@ -163,7 +163,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         turn++;
                         checkForGameOver();
                     } else {
-                        message = "That square is taken. Try again.";
+                        message = "That square is occupied.";
                     }
                 }
                 messageTextView.setText(message);
@@ -199,7 +199,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         // Diagonal 1
         if (!gameGrid[0][0].getText().equals(" ") &&
                 gameGrid[0][0].getText().equals(gameGrid[1][1].getText()) &&
-                gameGrid[1][1].getText().equals(gameGrid[2][2])
+                gameGrid[1][1].getText().equals(gameGrid[2][2].getText())
                 ) {
             message = gameGrid[0][0].getText() + " wins!";
             gameOver = true;
@@ -217,7 +217,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
 
         if (turn > 9) {
-            message = "It's a tie!";
+            message = "Cat's game!";
             gameOver = true;
             return;
         }
